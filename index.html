@@ -3,521 +3,339 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miss Ng | Digital Art & Illustration Portfolio</title>
-    <meta name="description" content="Professional portfolio showcasing digital painting, illustration, character design, and visual storytelling.">
+    <title>Miss Ng | Digital Artist</title>
+    <meta name="description" content="Digital painting, illustration, and visual design portfolio">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Minimal Header -->
     <header class="header">
-        <div class="container header-container">
-            <div class="logo">
-                <span class="logo-dot"></span>
-                <div>
-                    <h1 class="logo-name">MISS NG</h1>
-                    <p class="logo-sub">Digital Art & Visual Storytelling</p>
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <span class="logo-mark">MN</span>
+                    <div>
+                        <div class="logo-name">Miss Ng</div>
+                        <div class="logo-sub">Digital Artist</div>
+                    </div>
                 </div>
+                
+                <nav class="nav">
+                    <a href="#work" class="nav-link">Work</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </nav>
             </div>
-            
-            <nav class="nav">
-                <a href="#work" class="nav-link">Work</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#contact" class="nav-link">Contact</a>
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
-                    <i class="fas fa-moon"></i>
-                </button>
-            </nav>
-            
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-        
-        <div class="mobile-menu" id="mobileMenu">
-            <a href="#work" class="mobile-nav-link">Work</a>
-            <a href="#about" class="mobile-nav-link">About</a>
-            <a href="#contact" class="mobile-nav-link">Contact</a>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section - Clean -->
     <section class="hero">
-        <div class="container hero-container">
+        <div class="container">
             <div class="hero-content">
-                <p class="hero-subtitle">Visual Artist & Illustrator</p>
-                <h2 class="hero-title">Digital Painting <span class="highlight">•</span> Illustration <span class="highlight">•</span> Character Design</h2>
-                <p class="hero-description">I create visual stories that blend <span class="highlight-text">playful aesthetics</span> with <span class="highlight-text">premium execution</span>. My work spans digital painting, scene illustration, character design, and visual branding.</p>
+                <p class="hero-subtitle">Digital Painting • Illustration • Design</p>
+                <h1 class="hero-title">Visual stories with clean aesthetics and thoughtful details.</h1>
+                <p class="hero-description">15 curated works across digital painting, scene illustration, character design, and typography.</p>
                 
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">15</span>
-                        <span class="stat-label">Featured Works</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">8</span>
-                        <span class="stat-label">Categories</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label">Client Satisfaction</span>
-                    </div>
-                </div>
-                
-                <div class="hero-cta">
-                    <a href="#work" class="btn btn-primary">
-                        <span>View Portfolio</span>
-                        <i class="fas fa-arrow-down"></i>
-                    </a>
-                    <a href="#contact" class="btn btn-secondary">Collaborate</a>
-                </div>
-            </div>
-            
-            <div class="hero-visual">
-                <div class="floating-card card-1">
-                    <div class="card-image">
-                        <img src="image/ill-urban.jpg" alt="Urban Illustration">
-                    </div>
-                    <div class="card-label">Featured Work</div>
-                </div>
-                <div class="floating-card card-2">
-                    <div class="card-image">
-                        <img src="image/work-3d-character.jpg" alt="3D Character">
-                    </div>
-                    <div class="card-label">3D Character</div>
-                </div>
-                <div class="floating-card card-3">
-                    <div class="card-image">
-                        <img src="image/scene-coffee.jpg" alt="Coffee Shop Scene">
-                    </div>
-                    <div class="card-label">Scene Design</div>
+                <div class="hero-actions">
+                    <a href="#work" class="btn btn-primary">View Works</a>
+                    <a href="#contact" class="btn btn-outline">Contact</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Work Section -->
-    <main id="work" class="work-section">
+    <!-- Works Grid - Minimal -->
+    <main id="work" class="works">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Selected Works <span class="section-count">15</span></h2>
-                <p class="section-subtitle">A curated collection of my digital art, illustrations, and design projects.</p>
-                
-                <div class="category-filters">
-                    <button class="filter-btn active" data-filter="all">All Works</button>
-                    <button class="filter-btn" data-filter="digital">Digital Painting</button>
-                    <button class="filter-btn" data-filter="illustration">Illustration</button>
-                    <button class="filter-btn" data-filter="scenes">Scene Design</button>
-                    <button class="filter-btn" data-filter="characters">Character Design</button>
-                    <button class="filter-btn" data-filter="typography">Typography</button>
-                    <button class="filter-btn" data-filter="packaging">Packaging</button>
-                </div>
+                <h2 class="section-title">Selected Works</h2>
+                <p class="section-subtitle">Digital painting, illustration, scene design, and typography</p>
             </div>
             
+            <!-- Category Filters -->
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="digital">Digital</button>
+                <button class="filter-btn" data-filter="illustration">Illustration</button>
+                <button class="filter-btn" data-filter="scenes">Scenes</button>
+                <button class="filter-btn" data-filter="typography">Typography</button>
+                <button class="filter-btn" data-filter="packaging">Packaging</button>
+            </div>
+            
+            <!-- Works Grid -->
             <div class="works-grid">
-                <!-- Digital Painting 1 -->
+                <!-- 1. Digital Painting -->
                 <article class="work-card" data-category="digital">
-                    <div class="work-card-inner">
-                        <div class="work-image">
-                            <img src="image/ill-painting.jpg" alt="Digital Painting Study" loading="lazy">
-                            <button class="view-btn" data-src="image/ill-painting.jpg" data-title="Digital Painting Study" data-category="Digital Painting">
-                                <i class="fas fa-expand"></i>
-                                <span>View Details</span>
-                            </button>
-                        </div>
-                        <div class="work-info">
-                            <h3 class="work-title">Digital Painting Study</h3>
-                            <p class="work-description">Color theory and texture exploration for visual impact.</p>
-                            <div class="work-tags">
-                                <span class="work-tag">Digital Painting</span>
-                                <span class="work-tag">Visual Development</span>
-                            </div>
-                        </div>
+                    <div class="work-image">
+                        <img src="image/ill-painting.jpg" alt="Digital Painting" loading="lazy">
+                        <button class="view-btn" data-src="image/ill-painting.jpg" data-title="Digital Painting" data-category="Digital">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                    <div class="work-info">
+                        <h3 class="work-title">Digital Painting</h3>
+                        <p class="work-category">Color & Texture Study</p>
                     </div>
                 </article>
                 
-                <!-- Digital Painting 2 -->
+                <!-- 2. Painting Study -->
                 <article class="work-card" data-category="digital">
-                    <div class="work-card-inner">
-                        <div class="work-image">
-                            <img src="image/painting-1.jpg" alt="Light & Atmosphere Study" loading="lazy">
-                            <button class="view-btn" data-src="image/painting-1.jpg" data-title="Light & Atmosphere Study" data-category="Digital Painting">
-                                <i class="fas fa-expand"></i>
-                                <span>View Details</span>
-                            </button>
-                        </div>
-                        <div class="work-info">
-                            <h3 class="work-title">Light & Atmosphere Study</h3>
-                            <p class="work-description">Mastering lighting techniques and mood creation.</p>
-                            <div class="work-tags">
-                                <span class="work-tag">Digital Painting</span>
-                                <span class="work-tag">Lighting</span>
-                            </div>
-                        </div>
+                    <div class="work-image">
+                        <img src="image/painting-1.jpg" alt="Painting Study" loading="lazy">
+                        <button class="view-btn" data-src="image/painting-1.jpg" data-title="Painting Study" data-category="Digital">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                    <div class="work-info">
+                        <h3 class="work-title">Painting Study</h3>
+                        <p class="work-category">Light & Atmosphere</p>
                     </div>
                 </article>
                 
-                <!-- Illustration -->
+                <!-- 3. Urban Illustration -->
                 <article class="work-card" data-category="illustration">
-                    <div class="work-card-inner">
-                        <div class="work-image">
-                            <img src="image/ill-urban.jpg" alt="Urban Illustration Series" loading="lazy">
-                            <button class="view-btn" data-src="image/ill-urban.jpg" data-title="Urban Illustration Series" data-category="Illustration">
-                                <i class="fas fa-expand"></i>
-                                <span>View Details</span>
-                            </button>
-                        </div>
-                        <div class="work-info">
-                            <h3 class="work-title">Urban Illustration Series</h3>
-                            <p class="work-description">Clean linework with narrative details for brand storytelling.</p>
-                            <div class="work-tags">
-                                <span class="work-tag">Illustration</span>
-                                <span class="work-tag">Brand Visuals</span>
-                            </div>
-                        </div>
+                    <div class="work-image">
+                        <img src="image/ill-urban.jpg" alt="Urban Illustration" loading="lazy">
+                        <button class="view-btn" data-src="image/ill-urban.jpg" data-title="Urban Illustration" data-category="Illustration">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                    <div class="work-info">
+                        <h3 class="work-title">Urban Illustration</h3>
+                        <p class="work-category">Clean Linework</p>
                     </div>
                 </article>
                 
-                <!-- Scene Design 1 -->
+                <!-- 4. Scene Collection -->
                 <article class="work-card" data-category="scenes">
-                    <div class="work-card-inner">
-                        <div class="work-image">
-                            <img src="image/ill-scenes.jpg" alt="Scene Collection" loading="lazy">
-                            <button class="view-btn" data-src="image/ill-scenes.jpg" data-title="Scene Collection" data-category="Scene Design">
-                                <i class="fas fa-expand"></i>
-                                <span>View Details</span>
-                            </button>
-                        </div>
-                        <div class="work-info">
-                            <h3 class="work-title">Scene Collection</h3>
-                            <p class="work-description">Multi-style scenes with cohesive visual language.</p>
-                            <div class="work-tags">
-                                <span class="work-tag">Scene Design</span>
-                                <span class="work-tag">Environment Art</span>
-                            </div>
-                        </div>
+                    <div class="work-image">
+                        <img src="image/ill-scenes.jpg" alt="Scene Collection" loading="lazy">
+                        <button class="view-btn" data-src="image/ill-scenes.jpg" data-title="Scene Collection" data-category="Scene Design">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                    <div class="work-info">
+                        <h3 class="work-title">Scene Collection</h3>
+                        <p class="work-category">Multi-style Series</p>
                     </div>
                 </article>
                 
-                <!-- Scene Design 2 -->
+                <!-- 5. Coffee Shop -->
                 <article class="work-card" data-category="scenes">
-                    <div class="work-card-inner">
-                        <div class="work-image">
-                            <img src="image/scene-coffee.jpg" alt="Coffee Shop Atmosphere" loading="lazy">
-                            <button class="view-btn" data-src="image/scene-coffee.jpg" data-title="Coffee Shop Atmosphere" data-category="Scene Design">
-                                <i class="fas fa-expand"></i>
-                                <span>View Details</span>
-                            </button>
-                        </div>
-                        <div class="work-info">
-                            <h3 class="work-title">Coffee Shop Atmosphere</h3>
-                            <p class="work-description">Warm ambiance with detailed storytelling elements.</p>
-                            <div class="work-tags">
-                                <span class="work-tag">Scene Design</span>
-                                <span class="work-tag">Atmosphere</span>
-                            </div>
-                        </div>
+                    <div class="work-image">
+                        <img src="image/scene-coffee.jpg" alt="Coffee Shop" loading="lazy">
+                        <button class="view-btn" data-src="image/scene-coffee.jpg" data-title="Coffee Shop Scene" data-category="Scene Design">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                    <div class="work-info">
+                        <h3 class="work-title">Coffee Shop</h3>
+                        <p class="work-category">Atmosphere Design</p>
                     </div>
                 </article>
                 
-                <!-- Scene Design 3 -->
+                <!-- 6. Giant Dog Scene -->
                 <article class="work-card" data-category="scenes">
-                    <div class="work-card-inner">
-                        <div class="work-image">
-                            <img src="image/scene-giant-dog.jpg" alt="Giant Dog Scene" loading="lazy">
-                            <button class="view-btn" data-src="image/scene-giant-dog.jpg" data-title="Giant Dog Scene" data-category="Scene Design">
-                                <i class="fas fa-expand"></i>
-                                <span>View Details</span>
-                            </button>
-                        </div>
-                        <div class="work-info">
-                            <h3 class="work-title">Giant Dog Scene</h3>
-                            <p class="work-description">Exaggerated proportions for memorable visual impact.</p>
-                            <div class="work-tags">
-                                <span class="work-tag">Scene Design</span>
-                                <span class="work-tag">Whimsical</span>
-                            </div>
-                        </div>
+                    <div class="work-image">
+                        <img src="image/scene-giant-dog.jpg" alt="Giant Dog Scene" loading="lazy">
+                        <button class="view-btn" data-src="image/scene-giant-dog.jpg" data-title="Giant Dog Scene" data-category="Scene Design">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                    <div class="work-info">
+                        <h3 class="work-title">Giant Dog Scene</h3>
+                        <p class="work-category">Whimsical Illustration</p>
                     </div>
                 </article>
                 
-                <!-- Stickers -->
-                <article class="work-card" data-category="characters">
-                    <div class="work-card-inner">
-                        <div class="work-image">
-                            <img src="image/stickers-sheet.jpg" alt="Sticker Collection" loading="lazy">
-                            <button class="view-btn" data-src="image/stickers-sheet.jpg" data-title="Sticker Collection" data-category="Character Design">
-                                <i class="fas fa-expand"></i>
-                                <span>View Details</span>
-                            </button>
-                        </div>
-                        <div class="work-info">
-                            <h3 class="work-title">Sticker Collection</h3>
-                            <p class="work-description">Scalable character series for branding and merchandise.</p>
-                            <div class="work-tags">
-                                <span class="work-tag">Character Design</span>
-                                <span class="work-tag">Merchandise</span>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                
-                <!-- Typography 1 -->
-                <article class="work-card" data-category="typography">
-                    <div class="work-card-inner">
-                        <div class="work-image">
-                            <img src="image/lettering-1.jpg" alt="Typography Exploration 01" loading="lazy">
-                            <button class="view-btn" data-src="image/lettering-1.jpg" data-title="Typography Exploration 01" data-category="Typography">
-                                <i class="fas fa-expand"></i>
-                                <span>View Details</span>
-                            </button>
-                        </div>
-                        <div class="work-info">
-                            <h3 class="work-title">Typography Exploration 01</h3>
-                            <p class="work-description">Letterform rhythm, weight distribution, and contrast.</p>
-                            <div class="work-tags">
-                                <span class="work-tag">Typography</span>
-                                <span class="work-tag">Lettering</span>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                
-                <!-- Typography 2 -->
-                <article class="work-card" data-category="typography">
-                    <div class="work-card-inner">
-                        <div class="work-image">
-                            <img src="image/lettering-2.jpg" alt="Typography Exploration 02" loading="lazy">
-                            <button class="view-btn" data-src="image/lettering-2.jpg" data-title="Typography Exploration 02" data-category="Typography">
-                                <i class="fas fa-expand"></i>
-                                <span>View Details</span>
-                            </button>
-                        </div>
-                        <div class="work-info">
-                            <h3 class="work-title">Typography Exploration 02</h3>
-                            <p class="work-description">Clean, modern lettering with precise finishing.</p>
-                            <div class="work-tags">
-                                <span class="work-tag">Typography</span>
-                                <span class="work-tag">Modern</span>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                
-                <!-- Map Illustration -->
+                <!-- 7. Sticker Sheet -->
                 <article class="work-card" data-category="illustration">
-                    <div class="work-card-inner">
-                        <div class="work-image">
-                            <img src="image/map-1.jpg" alt="Illustrated Map Design" loading="lazy">
-                            <button class="view-btn" data-src="image/map-1.jpg" data-title="Illustrated Map Design" data-category="Illustration">
-                                <i class="fas fa-expand"></i>
-                                <span>View Details</span>
-                            </button>
-                        </div>
-                        <div class="work-info">
-                            <h3 class="work-title">Illustrated Map Design</h3>
-                            <p class="work-description">Clear iconography with reader-friendly navigation.</p>
-                            <div class="work-tags">
-                                <span class="work-tag">Illustration</span>
-                                <span class="work-tag">Infographic</span>
-                            </div>
-                        </div>
+                    <div class="work-image">
+                        <img src="image/stickers-sheet.jpg" alt="Sticker Sheet" loading="lazy">
+                        <button class="view-btn" data-src="image/stickers-sheet.jpg" data-title="Sticker Collection" data-category="Character Design">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                    <div class="work-info">
+                        <h3 class="work-title">Sticker Collection</h3>
+                        <p class="work-category">Character Series</p>
                     </div>
                 </article>
                 
-                <!-- 3D Character -->
-                <article class="work-card" data-category="characters">
-                    <div class="work-card-inner">
-                        <div class="work-image">
-                            <img src="image/work-3d-character.jpg" alt="3D Character Design" loading="lazy">
-                            <button class="view-btn" data-src="image/work-3d-character.jpg" data-title="3D Character Design" data-category="Character Design">
-                                <i class="fas fa-expand"></i>
-                                <span>View Details</span>
-                            </button>
-                        </div>
-                        <div class="work-info">
-                            <h3 class="work-title">3D Character Design</h3>
-                            <p class="work-description">Friendly proportions with appealing material rendering.</p>
-                            <div class="work-tags">
-                                <span class="work-tag">3D Character</span>
-                                <span class="work-tag">Digital Sculpting</span>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                
-                <!-- Typography Application -->
+                <!-- 8. Lettering 01 -->
                 <article class="work-card" data-category="typography">
-                    <div class="work-card-inner">
-                        <div class="work-image">
-                            <img src="image/work-lettering.jpg" alt="Typography in Application" loading="lazy">
-                            <button class="view-btn" data-src="image/work-lettering.jpg" data-title="Typography in Application" data-category="Typography">
-                                <i class="fas fa-expand"></i>
-                                <span>View Details</span>
-                            </button>
-                        </div>
-                        <div class="work-info">
-                            <h3 class="work-title">Typography in Application</h3>
-                            <p class="work-description">Lettering direction and layout integration examples.</p>
-                            <div class="work-tags">
-                                <span class="work-tag">Typography</span>
-                                <span class="work-tag">Layout</span>
-                            </div>
-                        </div>
+                    <div class="work-image">
+                        <img src="image/lettering-1.jpg" alt="Lettering 01" loading="lazy">
+                        <button class="view-btn" data-src="image/lettering-1.jpg" data-title="Typography 01" data-category="Typography">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                    <div class="work-info">
+                        <h3 class="work-title">Lettering 01</h3>
+                        <p class="work-category">Type Exploration</p>
                     </div>
                 </article>
                 
-                <!-- Packaging 1 -->
+                <!-- 9. Lettering 02 -->
+                <article class="work-card" data-category="typography">
+                    <div class="work-image">
+                        <img src="image/lettering-2.jpg" alt="Lettering 02" loading="lazy">
+                        <button class="view-btn" data-src="image/lettering-2.jpg" data-title="Typography 02" data-category="Typography">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                    <div class="work-info">
+                        <h3 class="work-title">Lettering 02</h3>
+                        <p class="work-category">Modern Letterforms</p>
+                    </div>
+                </article>
+                
+                <!-- 10. Map Illustration -->
+                <article class="work-card" data-category="illustration">
+                    <div class="work-image">
+                        <img src="image/map-1.jpg" alt="Map Illustration" loading="lazy">
+                        <button class="view-btn" data-src="image/map-1.jpg" data-title="Map Illustration" data-category="Illustration">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                    <div class="work-info">
+                        <h3 class="work-title">Map Illustration</h3>
+                        <p class="work-category">Infographic Design</p>
+                    </div>
+                </article>
+                
+                <!-- 11. 3D Character -->
+                <article class="work-card" data-category="digital">
+                    <div class="work-image">
+                        <img src="image/work-3d-character.jpg" alt="3D Character" loading="lazy">
+                        <button class="view-btn" data-src="image/work-3d-character.jpg" data-title="3D Character Design" data-category="Digital">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                    <div class="work-info">
+                        <h3 class="work-title">3D Character</h3>
+                        <p class="work-category">Digital Sculpting</p>
+                    </div>
+                </article>
+                
+                <!-- 12. Typography Application -->
+                <article class="work-card" data-category="typography">
+                    <div class="work-image">
+                        <img src="image/work-lettering.jpg" alt="Typography Application" loading="lazy">
+                        <button class="view-btn" data-src="image/work-lettering.jpg" data-title="Typography Application" data-category="Typography">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                    <div class="work-info">
+                        <h3 class="work-title">Typography Application</h3>
+                        <p class="work-category">Layout Integration</p>
+                    </div>
+                </article>
+                
+                <!-- 13. Packaging Concept 01 -->
                 <article class="work-card" data-category="packaging">
-                    <div class="work-card-inner">
-                        <div class="work-image">
-                            <img src="image/work-packaging.jpg" alt="Packaging Concept 01" loading="lazy">
-                            <button class="view-btn" data-src="image/work-packaging.jpg" data-title="Packaging Concept 01" data-category="Packaging Design">
-                                <i class="fas fa-expand"></i>
-                                <span>View Details</span>
-                            </button>
-                        </div>
-                        <div class="work-info">
-                            <h3 class="work-title">Packaging Concept 01</h3>
-                            <p class="work-description">Brand-driven packaging visuals and structural layout.</p>
-                            <div class="work-tags">
-                                <span class="work-tag">Packaging Design</span>
-                                <span class="work-tag">Brand Identity</span>
-                            </div>
-                        </div>
+                    <div class="work-image">
+                        <img src="image/work-packaging.jpg" alt="Packaging Concept 01" loading="lazy">
+                        <button class="view-btn" data-src="image/work-packaging.jpg" data-title="Packaging Concept 01" data-category="Packaging">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                    <div class="work-info">
+                        <h3 class="work-title">Packaging 01</h3>
+                        <p class="work-category">Brand Visuals</p>
                     </div>
                 </article>
                 
-                <!-- Packaging 2 -->
+                <!-- 14. Packaging Concept 02 -->
                 <article class="work-card" data-category="packaging">
-                    <div class="work-card-inner">
-                        <div class="work-image">
-                            <img src="image/work-packaging2.jpg" alt="Packaging Concept 02" loading="lazy">
-                            <button class="view-btn" data-src="image/work-packaging2.jpg" data-title="Packaging Concept 02" data-category="Packaging Design">
-                                <i class="fas fa-expand"></i>
-                                <span>View Details</span>
-                            </button>
-                        </div>
-                        <div class="work-info">
-                            <h3 class="work-title">Packaging Concept 02</h3>
-                            <p class="work-description">Series extension with balanced typography and imagery.</p>
-                            <div class="work-tags">
-                                <span class="work-tag">Packaging Design</span>
-                                <span class="work-tag">Series Design</span>
-                            </div>
-                        </div>
+                    <div class="work-image">
+                        <img src="image/work-packaging2.jpg" alt="Packaging Concept 02" loading="lazy">
+                        <button class="view-btn" data-src="image/work-packaging2.jpg" data-title="Packaging Concept 02" data-category="Packaging">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                    <div class="work-info">
+                        <h3 class="work-title">Packaging 02</h3>
+                        <p class="work-category">Series Extension</p>
                     </div>
                 </article>
                 
-                <!-- Scene Design 4 -->
+                <!-- 15. Scene Design -->
                 <article class="work-card" data-category="scenes">
-                    <div class="work-card-inner">
-                        <div class="work-image">
-                            <img src="image/work-scene.jpg" alt="Narrative Scene Design" loading="lazy">
-                            <button class="view-btn" data-src="image/work-scene.jpg" data-title="Narrative Scene Design" data-category="Scene Design">
-                                <i class="fas fa-expand"></i>
-                                <span>View Details</span>
-                            </button>
-                        </div>
-                        <div class="work-info">
-                            <h3 class="work-title">Narrative Scene Design</h3>
-                            <p class="work-description">Composition and visual direction for storytelling.</p>
-                            <div class="work-tags">
-                                <span class="work-tag">Scene Design</span>
-                                <span class="work-tag">Narrative</span>
-                            </div>
-                        </div>
+                    <div class="work-image">
+                        <img src="image/work-scene.jpg" alt="Scene Design" loading="lazy">
+                        <button class="view-btn" data-src="image/work-scene.jpg" data-title="Narrative Scene Design" data-category="Scene Design">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                    <div class="work-info">
+                        <h3 class="work-title">Narrative Scene</h3>
+                        <p class="work-category">Storytelling Design</p>
                     </div>
                 </article>
             </div>
         </div>
     </main>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
+    <!-- About Section - Simple -->
+    <section id="about" class="about">
         <div class="container">
-            <div class="about-container">
+            <div class="about-grid">
                 <div class="about-content">
-                    <h2 class="section-title">About the Artist</h2>
-                    <p class="about-description">I specialize in <span class="highlight-text">digital painting</span>, <span class="highlight-text">illustration</span>, and <span class="highlight-text">visual storytelling</span>. My style balances clean aesthetics with playful details, delivering premium visual solutions for brands and publications.</p>
+                    <h2 class="section-title">About</h2>
+                    <p class="about-description">I specialize in digital painting, illustration, and visual storytelling, creating clean, playful, and premium visuals for brands and publications.</p>
                     
-                    <div class="about-grid">
-                        <div class="about-card">
-                            <div class="about-card-icon">
-                                <i class="fas fa-palette"></i>
-                            </div>
-                            <h3 class="about-card-title">Expertise</h3>
-                            <ul class="about-card-list">
+                    <div class="about-details">
+                        <div class="detail">
+                            <h3 class="detail-title">Expertise</h3>
+                            <ul class="detail-list">
                                 <li>Digital Painting & Illustration</li>
                                 <li>Scene & Environment Design</li>
-                                <li>Character Design & Development</li>
+                                <li>Character Design</li>
                                 <li>Typography & Lettering</li>
                                 <li>Packaging & Brand Visuals</li>
                             </ul>
                         </div>
                         
-                        <div class="about-card">
-                            <div class="about-card-icon">
-                                <i class="fas fa-handshake"></i>
-                            </div>
-                            <h3 class="about-card-title">Collaboration Process</h3>
-                            <ul class="about-card-list">
-                                <li>Initial Brief & Concept Discussion</li>
+                        <div class="detail">
+                            <h3 class="detail-title">Process</h3>
+                            <ul class="detail-list">
+                                <li>Concept & Direction Discussion</li>
                                 <li>2-3 Directional Sketches</li>
-                                <li>Refinement & Iteration Cycles</li>
-                                <li>Final Delivery (Print/Web Ready)</li>
+                                <li>Refinement & Iteration</li>
+                                <li>Final Delivery</li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 
-                <div class="about-sidebar">
-                    <div class="sidebar-stats">
-                        <div class="sidebar-stat">
-                            <span class="sidebar-stat-number">4+</span>
-                            <span class="sidebar-stat-label">Years Experience</span>
-                        </div>
-                        <div class="sidebar-stat">
-                            <span class="sidebar-stat-number">50+</span>
-                            <span class="sidebar-stat-label">Projects Completed</span>
-                        </div>
-                        <div class="sidebar-stat">
-                            <span class="sidebar-stat-number">100%</span>
-                            <span class="sidebar-stat-label">Client Satisfaction</span>
-                        </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <div class="stat-number">15</div>
+                        <div class="stat-label">Featured Works</div>
                     </div>
-                    
-                    <div class="sidebar-note">
-                        <i class="fas fa-lightbulb"></i>
-                        <p>Click on any artwork to view details. Press <strong>ESC</strong> to close the viewer.</p>
+                    <div class="stat">
+                        <div class="stat-number">8</div>
+                        <div class="stat-label">Categories</div>
                     </div>
-                    
-                    <div class="sidebar-format">
-                        <h4>Delivery Formats</h4>
-                        <div class="format-tags">
-                            <span class="format-tag">JPG/PNG</span>
-                            <span class="format-tag">PDF</span>
-                            <span class="format-tag">AI/EPS</span>
-                            <span class="format-tag">PSD</span>
-                            <span class="format-tag">Print Ready</span>
-                        </div>
+                    <div class="stat">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Satisfaction</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
+    <!-- Contact Section - Clean -->
+    <section id="contact" class="contact">
         <div class="container">
-            <div class="contact-container">
-                <div class="contact-header">
-                    <h2 class="section-title">Let's Create Together</h2>
-                    <p class="contact-subtitle">Share your project goals, specifications, and visual references. I'll respond with a timeline and quote.</p>
-                </div>
+            <div class="contact-content">
+                <h2 class="section-title">Contact</h2>
+                <p class="contact-description">For project inquiries, commissions, or collaborations.</p>
                 
                 <div class="contact-info">
                     <div class="contact-item">
@@ -536,7 +354,7 @@
                         </div>
                         <div class="contact-details">
                             <h3 class="contact-label">Portfolio</h3>
-                            <a href="https://behance.net/missng" target="_blank" class="contact-value">Behance / Dribbble</a>
+                            <a href="https://behance.net/missng" target="_blank" class="contact-value">Behance</a>
                         </div>
                     </div>
                     
@@ -545,77 +363,49 @@
                             <i class="fab fa-instagram"></i>
                         </div>
                         <div class="contact-details">
-                            <h3 class="contact-label">Social</h3>
+                            <h3 class="contact-label">Instagram</h3>
                             <a href="https://instagram.com/missng.art" target="_blank" class="contact-value">@missng.art</a>
                         </div>
                     </div>
-                </div>
-                
-                <div class="contact-note">
-                    <p>Currently accepting commissions for <strong>Q3 2024</strong>. Response time: 1-2 business days.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Minimal Footer -->
     <footer class="footer">
-        <div class="container footer-container">
-            <div class="footer-copyright">
-                <p>© <span id="currentYear"></span> Miss Ng Studio. All rights reserved.</p>
-                <p class="footer-note">Digital Art • Illustration • Visual Design</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-copyright">
+                    <p>© 2024 Miss Ng. All rights reserved.</p>
+                </div>
+                <div class="footer-note">
+                    <p>Click on any work to view details. Press ESC to close.</p>
+                </div>
             </div>
-            
-            <div class="footer-links">
-                <a href="#work" class="footer-link">Portfolio</a>
-                <a href="#about" class="footer-link">Process</a>
-                <a href="#contact" class="footer-link">Contact</a>
-                <a href="#" class="footer-link">Style Guide</a>
-            </div>
-            
-            <button class="back-to-top" id="backToTop">
-                <i class="fas fa-arrow-up"></i>
-                <span>Back to top</span>
-            </button>
         </div>
     </footer>
 
-    <!-- Lightbox Modal -->
+    <!-- Lightbox Modal - Clean -->
     <div class="lightbox" id="lightbox">
         <div class="lightbox-overlay" id="lightboxOverlay"></div>
-        <div class="lightbox-container">
+        <div class="lightbox-content">
             <button class="lightbox-close" id="lightboxClose">
                 <i class="fas fa-times"></i>
             </button>
             
             <div class="lightbox-header">
-                <div class="lightbox-title-container">
-                    <h3 class="lightbox-title" id="lightboxTitle">Artwork Title</h3>
-                    <p class="lightbox-category" id="lightboxCategory">Category</p>
-                </div>
-                <a href="#" class="lightbox-download" id="lightboxDownload" target="_blank" download>
-                    <i class="fas fa-download"></i>
-                    <span>View Full Size</span>
-                </a>
+                <h3 class="lightbox-title" id="lightboxTitle">Artwork Title</h3>
+                <p class="lightbox-category" id="lightboxCategory">Category</p>
             </div>
             
             <div class="lightbox-image-container">
                 <img class="lightbox-image" id="lightboxImage" src="" alt="Artwork Preview">
-                <div class="lightbox-loader">
-                    <div class="loader-spinner"></div>
-                </div>
             </div>
             
-            <div class="lightbox-controls">
-                <button class="lightbox-control prev-btn" id="prevBtn">
-                    <i class="fas fa-chevron-left"></i>
-                    <span>Previous</span>
-                </button>
-                <button class="lightbox-control next-btn" id="nextBtn">
-                    <span>Next</span>
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
+            <a href="#" class="lightbox-download" id="lightboxDownload" target="_blank">
+                View Full Size
+            </a>
         </div>
     </div>
 
