@@ -2,7 +2,38 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Portfolio loaded successfully');
     
-    // ===== FILTER WORKS =====
+    // ===== FIXED SMOOTH SCROLL (修复滚动功能) =====
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            // Skip empty anchors
+            if (href === '#' || href === '#!') return;
+            
+            const targetElement = document.querySelector(href);
+            
+            if (targetElement) {
+                e.preventDefault();
+                
+                // Calculate position with header offset
+                const header = document.querySelector('.header');
+                const headerHeight = header ? header.offsetHeight : 80;
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = targetPosition - headerHeight - 20;
+                
+                // Smooth scroll
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+                
+                // Update URL
+                history.pushState(null, null, href);
+            }
+        });
+    });
+    
+    // ===== FIXED FILTER WORKS =====
     const filterButtons = document.querySelectorAll('.filter-btn');
     const workCards = document.querySelectorAll('.work-card');
     
@@ -36,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // ===== LIGHTBOX =====
+    // ===== FIXED LIGHTBOX =====
     const lightbox = document.getElementById('lightbox');
     const lightboxOverlay = document.getElementById('lightboxOverlay');
     const lightboxClose = document.getElementById('lightboxClose');
@@ -46,17 +77,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const lightboxDownload = document.getElementById('lightboxDownload');
     const viewButtons = document.querySelectorAll('.view-btn');
     
-    // Current image index for navigation (if needed)
-    let currentImageIndex = 0;
-    const allImages = Array.from(viewButtons).map(btn => ({
-        src: btn.dataset.src,
-        title: btn.dataset.title,
-        category: btn.dataset.category
-    }));
-    
     // Open lightbox
     viewButtons.forEach((button, index) => {
-        button.addEventListener('click', () => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            
             const src = button.dataset.src;
             const title = button.dataset.title;
             const category = button.dataset.category;
@@ -66,9 +92,6 @@ document.addEventListener('DOMContentLoaded', function() {
             lightboxTitle.textContent = title;
             lightboxCategory.textContent = category;
             lightboxDownload.href = src;
-            
-            // Set current index
-            currentImageIndex = index;
             
             // Show lightbox
             lightbox.classList.add('active');
@@ -93,101 +116,88 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // ===== SMOOTH SCROLL =====
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                // Close mobile menu if open
-                if (mobileMenu && mobileMenu.classList.contains('active')) {
-                    closeMobileMenu();
+    // ===== ENSURE BUTTONS WORK =====
+    // Fix for View Works button in hero section
+    const viewWorksBtn = document.querySelector('.hero .btn-primary');
+    if (viewWorksBtn) {
+        viewWorksBtn.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === '#work') {
+                e.preventDefault();
+                const workSection = document.querySelector('#work');
+                if (workSection) {
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const targetPosition = workSection.getBoundingClientRect().top + window.pageYOffset;
+                    const offsetPosition = targetPosition - headerHeight - 20;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    history.pushState(null, null, '#work');
                 }
-                
-                // Calculate header height for offset
-                const headerHeight = document.querySelector('.header').offsetHeight;
-                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-                
-                window.scrollTo({
-                    top: targetPosition - headerHeight - 20,
-                    behavior: 'smooth'
-                });
             }
         });
-    });
+    }
+    
+    // Fix for Contact button in hero section
+    const contactBtn = document.querySelector('.hero .btn-outline');
+    if (contactBtn) {
+        contactBtn.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === '#contact') {
+                e.preventDefault();
+                const contactSection = document.querySelector('#contact');
+                if (contactSection) {
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const targetPosition = contactSection.getBoundingClientRect().top + window.pageYOffset;
+                    const offsetPosition = targetPosition - headerHeight - 20;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    history.pushState(null, null, '#contact');
+                }
+            }
+        });
+    }
     
     // ===== HEADER SCROLL EFFECT =====
     const header = document.querySelector('.header');
-    let lastScrollTop = 0;
-    
-    window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        // Add shadow when scrolled
-        if (scrollTop > 10) {
-            header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
-        } else {
-            header.style.boxShadow = 'none';
-        }
-        
-        // Hide/show header on scroll (optional - remove if not needed)
-        if (scrollTop > lastScrollTop && scrollTop > 100) {
-            // Scrolling down
-            header.style.transform = 'translateY(-100%)';
-        } else {
-            // Scrolling up
-            header.style.transform = 'translateY(0)';
-        }
-        
-        lastScrollTop = scrollTop;
-    });
-    
-    // ===== WORK CARD HOVER EFFECT =====
-    workCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transition = 'all 0.3s ease';
+    if (header) {
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // Add shadow when scrolled
+            if (scrollTop > 10) {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
         });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-        });
-    });
-    
-    // ===== LAZY LOAD IMAGES =====
-    const images = document.querySelectorAll('img[loading="lazy"]');
-    
-    if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src || img.src;
-                    img.classList.add('loaded');
-                    imageObserver.unobserve(img);
-                }
-            });
-        });
-        
-        images.forEach(img => imageObserver.observe(img));
     }
     
     // ===== CURRENT YEAR IN FOOTER =====
-    const yearSpan = document.getElementById('currentYear');
-    if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
+    const currentYearElement = document.querySelector('#currentYear');
+    if (currentYearElement) {
+        currentYearElement.textContent = new Date().getFullYear();
+    } else {
+        // Fallback: add year to footer if element doesn't exist
+        const footerCopyright = document.querySelector('.footer-copyright p');
+        if (footerCopyright) {
+            const currentYear = new Date().getFullYear();
+            footerCopyright.innerHTML = footerCopyright.innerHTML.replace('2024', currentYear);
+        }
     }
     
-    // ===== ADD LOADING ANIMATION =====
-    // Fade in page content
+    // ===== INITIAL OPACITY =====
     setTimeout(() => {
         document.body.style.opacity = '1';
         document.body.style.transition = 'opacity 0.5s ease';
     }, 100);
     
-    // Initial body opacity (set in CSS)
     document.body.style.opacity = '0';
 });
